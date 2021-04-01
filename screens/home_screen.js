@@ -5,55 +5,22 @@ import globalStyles from '../styles/global_styles';
 
 export default class HomeScreen extends React.Component {
 
-  /* See list_tile.js for more on props & state. */
   constructor(props) {
-    super(props);
-
-    this.state = {
-      msgs: [],
-      count: 0,
-    };
+    /* Set up the component */
   }
 
   /* This function will add a new tile to the list of tiles */
   addNewTile() {
-
-    /* Append the next number onto the end of the array. 
-       setState will cause a re-render, but only of the components that have changed (ie. just
-        the new component we added) */
-    this.setState({
-      msgs: [...this.state.msgs, this.state.count],
-      count: this.state.count + 1,
-    });
+    /* Update the state to add a new number tile */
   }
 
   render() {
 
-    /* For each number in the array, create a tile for it */
-    let components_list = this.state.msgs.map( (text, index) => {
-      return (
-        /* We're passing "text" as a prop to the ListTile component */
-        <ListTile key={index} message={text}/>
-      )
-    })
+    /* Create a tile for each number in the array */
 
     return (
-      <View style={styles.container}>
-        <TouchableOpacity 
-          style={styles.button}
-
-          /* When the button is pressed, call the addNewTile() function */
-          onPress={() => this.addNewTile()}
-        >
-          <Text style={styles.text}>Add an item!</Text> 
-          
-        </TouchableOpacity>
-
-        <ScrollView style={styles.scroll}>
-          {components_list}
-        </ScrollView>
-
-      </View>
+      /* Specify the components in the home screen & how they should look */
+      <Text>Home Screen!</Text>
     );
   }
 }
