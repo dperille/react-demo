@@ -40,14 +40,23 @@ export class ListTile extends React.Component {
     return (
       /* TouchableOpacity is the wrapper -- it holds the text & handles when the tile is pressed. */
       /* View is another wrapper, which allows us to access this components color value, since we can't access state in "styles" below */
-      <TouchableOpacity style={styles.container} onPress={() => this.setNewColor()} activeOpacity={0.9}>
-        
-        <View style={{ backgroundColor: this.state.color,
-                       width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
+      <TouchableOpacity 
+        style={{
+          flex: 1, 
+          width: '100%', 
+          aspectRatio: 4, 
+          backgroundColor: this.state.color,
+          alignItems: 'center',       /* center the text horizontally */
+          justifyContent: 'center',   /* center the text vertically */
+          borderRadius: 5,
+          marginBottom: 10,   /* this will create space between the tiles */
+        }} 
+
+        onPress={() => this.setNewColor()} activeOpacity={0.9}
+      >
 
           <Text style={styles.text}>{this.state.text}</Text>
 
-        </View>
       </TouchableOpacity>
     )
   }
