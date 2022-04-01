@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/home_screen.js';
 import ProfileScreen from './screens/profile_screen.js';
+import TestScreen from './screens/test_screen.js';
 
 
 /* To install the stack navigator packages:
@@ -20,6 +21,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Profile" component={ProfileScreen}/>
+        <Stack.Screen name="Test" component={TestScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
